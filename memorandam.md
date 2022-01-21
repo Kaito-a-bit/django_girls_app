@@ -13,3 +13,8 @@ Djangoではマイグレーションでモデルの変更を保存する。
 ---
 
 `view`には`url`に紐付けが必要でそれを行うのは`URLconf`
+
+・モデルの変更手順  
+ - `models.py`からモデルを変更
+ - これらの変更のためのマイグレーションを作成するために`python manage.py makemigrations`を実行
+ - データベースにこれらの変更を適用するために`python manage.py migrate`を実行
