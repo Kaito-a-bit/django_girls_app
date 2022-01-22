@@ -1,0 +1,12 @@
+
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+    <!-- polls/urlsのpath()関数でname引数を定義したことにより、テンプレートタグの {％url％} を使用して、URL 設定で定義されている特定の URL パスへの依存をなくすことができる -->
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li> 
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
